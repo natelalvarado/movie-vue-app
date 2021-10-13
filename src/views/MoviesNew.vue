@@ -13,6 +13,10 @@
       <div>
         Plot:
         <input type="text" v-model="newMovieParams.plot" />
+        <br />
+        <small
+          >Remaining Characters: {{ 200 - newMovieParams.plot.length }}</small
+        >
       </div>
       <div>
         Director:
@@ -30,7 +34,10 @@ import axios from "axios";
 export default {
   data: function () {
     return {
-      newMovieParams: {},
+      newMovieParams: {
+        title: "",
+        plot: "",
+      },
       errors: [],
     };
   },
