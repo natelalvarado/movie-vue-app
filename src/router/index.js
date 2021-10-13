@@ -39,7 +39,7 @@ const routes = [
   {
     path: "/movies",
     name: "movies-index",
-    componet: MoviesIndex,
+    component: MoviesIndex,
   },
 
   {
