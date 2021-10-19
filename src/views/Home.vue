@@ -1,12 +1,30 @@
 <template>
   <div class="home">
-    <h1>New Movie</h1>
+    <h1 style="color: white; background-color: #e0d52c; font-family: georgia">
+      New Movie
+    </h1>
     <div>Title: <input type="text" v-model="newMovieParams.title" /></div>
     <div>Year: <input type="text" v-model="newMovieParams.year" /></div>
     <div>Plot: <input type="text" v-model="newMovieParams.plot" /></div>
     <div>Director: <input type="text" v-model="newMovieParams.director" /></div>
     <p>newMovieParams: {{ newMovieParams }}</p>
-    <button v-on:click="createMovie()">Add New Movie</button>
+    <button
+      style="
+        background-color: #ddd;
+        border: none;
+        color: black;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 16px;
+      "
+      v-on:click="createMovie()"
+    >
+      Add New Movie
+    </button>
     <h1>All Movies</h1>
     <div v-for="movie in movies" v-bind:key="movie.id">
       <h2>Title: {{ movie.title }}</h2>

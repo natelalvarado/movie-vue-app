@@ -1,19 +1,36 @@
 <template>
   <div class="login">
     <form v-on:submit.prevent="submit()">
-      <h1>Login</h1>
+      <h1 style="color: white; background-color: #e75b16; font-family: georgia">
+        Login
+      </h1>
       <ul>
         <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
       </ul>
-      <div>
+      <div style="font-family: georgia">
         <label>Email:</label>
         <input type="email" v-model="newSessionParams.email" />
       </div>
-      <div>
+      <div style="font-family: georgia">
         <label>Password:</label>
         <input type="password" v-model="newSessionParams.password" />
       </div>
-      <input type="submit" value="Submit" />
+      <input
+        style="
+          background-color: #ddd;
+          border: none;
+          color: black;
+          padding: 10px 20px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          margin: 4px 2px;
+          cursor: pointer;
+          border-radius: 16px;
+        "
+        type="submit"
+        value="Submit"
+      />
     </form>
   </div>
 </template>

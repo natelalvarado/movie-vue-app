@@ -1,16 +1,18 @@
 <template>
   <div class="movies-new">
     <form v-on:submit.prevent="createMovie()">
-      <h1>New Movie</h1>
-      <div>
+      <h1 style="color: white; background-color: #986fda; font-family: georgia">
+        New Movie
+      </h1>
+      <div style="font-family: georgia">
         Title:
         <input type="text" v-model="newMovieParams.title" />
       </div>
-      <div>
+      <div style="font-family: georgia">
         Year:
         <input type="text" v-model="newMovieParams.year" />
       </div>
-      <div>
+      <div style="font-family: georgia">
         Plot:
         <input type="text" v-model="newMovieParams.plot" />
         <br />
@@ -18,7 +20,7 @@
           >Remaining Characters: {{ 200 - newMovieParams.plot.length }}</small
         >
       </div>
-      <div>
+      <div style="font-family: georgia">
         Director:
         <input type="text" v-model="newMovieParams.director" />
       </div>

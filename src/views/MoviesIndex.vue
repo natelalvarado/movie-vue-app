@@ -1,7 +1,10 @@
 <template>
   <div class="movies-index">
-    <h1>All Movies</h1>
-    <h1>All Movies</h1>
+    <h1
+      style="color: white; background-color: #18a453; font-family: comic-sans"
+    >
+      All Movies
+    </h1>
     Search by title:
     <input v-model="titleFilter" list="titles" />
     <datalist id="titles">
@@ -10,7 +13,21 @@
       </option>
     </datalist>
     <div>
-      <button v-on:click="setSortAttribute('title')">
+      <button
+        style="
+          background-color: #ddd;
+          border: none;
+          color: black;
+          padding: 10px 20px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          margin: 4px 2px;
+          cursor: pointer;
+          border-radius: 16px;
+        "
+        v-on:click="setSortAttribute('title')"
+      >
         Sort Alphabetically
       </button>
     </div>
@@ -23,10 +40,10 @@
       )"
       v-bind:key="movie.id"
     >
-      <h2>{{ movie.title }}</h2>
-      <p>Year: {{ movie.year }}</p>
-      <p>Plot: {{ movie.plot }}</p>
-      <p>Director: {{ movie.director }}</p>
+      <h2 style="font-family: georgia">{{ movie.title }}</h2>
+      <p style="font-family: georgia">Year: {{ movie.year }}</p>
+      <p style="font-family: georgia">Plot: {{ movie.plot }}</p>
+      <p style="font-family: georgia">Director: {{ movie.director }}</p>
       <router-link :to="`/movies/${movie.id}`">See Details</router-link>
     </div>
   </div>
