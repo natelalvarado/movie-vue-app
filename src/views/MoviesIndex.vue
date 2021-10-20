@@ -5,6 +5,7 @@
     >
       All Movies
     </h1>
+
     Search by title:
     <input v-model="titleFilter" list="titles" />
     <datalist id="titles">
@@ -14,6 +15,8 @@
     </datalist>
     <div>
       <button
+        type="button"
+        class="btn btn-primary"
         style="
           background-color: #ddd;
           border: none;
@@ -32,19 +35,28 @@
       </button>
     </div>
 
-    <div
-      v-for="movie in orderBy(
-        filterBy(movies, titleFilter, 'title'),
-        sortAttribute,
-        sortOrder
-      )"
-      v-bind:key="movie.id"
-    >
-      <h2 style="font-family: georgia">{{ movie.title }}</h2>
-      <p style="font-family: georgia">Year: {{ movie.year }}</p>
-      <p style="font-family: georgia">Plot: {{ movie.plot }}</p>
-      <p style="font-family: georgia">Director: {{ movie.director }}</p>
-      <router-link :to="`/movies/${movie.id}`">See Details</router-link>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div
+        v-for="movie in orderBy(
+          filterBy(movies, titleFilter, 'title'),
+          sortAttribute,
+          sortOrder
+        )"
+        v-bind:key="movie.id"
+      >
+        <div class="card">
+          <router-link :to="`/movies/${movie.id}`"></router-link>
+          <div class="card-body">
+            <h5 class="card-title">{{ movie.title }}</h5>
+            <p class="card-text">
+              {{ movie.year }} <br />
+              {{ movie.director }} <br />
+              {{ movie.plot }} <br />
+              <router-link :to="`/movies/${movie.id}`">See Details</router-link>
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>

@@ -1,6 +1,6 @@
 <template>
   <div class="movies-new">
-    <form v-on:submit.prevent="createMovie()">
+    <form>
       <h1 style="color: white; background-color: #986fda; font-family: georgia">
         New Movie
       </h1>
@@ -24,7 +24,14 @@
         Director:
         <input type="text" v-model="newMovieParams.director" />
       </div>
-      <input type="submit" value="Create" />
+      <button
+        type="submit"
+        value="Create"
+        class="btn btn-primary"
+        v-on:click.stop.prevent="createMovie()"
+      >
+        Create
+      </button>
     </form>
   </div>
 </template>

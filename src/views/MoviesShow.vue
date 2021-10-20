@@ -30,10 +30,12 @@ export default {
   },
   methods: {
     destroyMovie: function () {
-      axios.delete(`/movies/${this.movie.id}`).then((response) => {
-        console.log(response.data);
-        this.$router.push("/movies");
-      });
+      if (confirm("Are you sure you want to delete this movie?")) {
+        axios.delete(`/movies/${this.movie.id}`).then((response) => {
+          console.log(response.data);
+          this.$router.push("/movies");
+        });
+      }
     },
   },
 };

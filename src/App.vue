@@ -1,18 +1,47 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> |
-      <router-link to="/signup">Signup</router-link> |
-      <router-link to="/login">Login</router-link> |
-      <span v-if="isLoggedIn()">
-        <router-link to="/logout">Logout</router-link> |
-      </span>
-      <router-link to="/movies">All Movies</router-link>
-      <span v-if="isLoggedIn()">
-        | <router-link to="/movies/new">New Movie</router-link>
-      </span>
-    </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <router-link class="navbar-brand" to="/">Home</router-link>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <router-link
+                class="nav-link active"
+                aria-current="page"
+                to="/movies"
+                >Movies</router-link
+              >
+            </li>
+            <li class="nav-item">
+              <router-link class="nav-link" to="/movies/new"
+                >New Movie</router-link
+              >
+            </li>
+            <li class="nav-item">
+              <router-link class="nav-link" to="/login">Login</router-link>
+            </li>
+            <li class="nav-item">
+              <router-link class="nav-link" to="/logout">Logout</router-link>
+            </li>
+            <li class="nav-item">
+              <router-link class="nav-link" to="/signup">Signup</router-link>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
     <router-view />
   </div>
 </template>
